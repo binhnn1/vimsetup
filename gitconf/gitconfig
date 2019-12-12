@@ -1,0 +1,53 @@
+#mv gitconfig ~/.gitconfig
+
+[user]
+	name = Binh Nguyen
+	email = binhnn1@uci.edu
+[core]
+	editor = vim
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red bold
+	new = green
+	plain = white
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[alias]
+	st = status
+	sts = status -s
+	co = checkout
+	cob = checkout -b
+	cobt = checkout --track -b
+	br = branch
+	brd = branch -d
+	brD = branch -D
+	ci = commit
+	cia = commit --amend
+	unstage = reset HEAD --
+	d = diff
+	ds = diff --stat
+	dc = diff --cached
+	dcs = diff --cached --stat
+	a = add
+	aa = add -A
+	awd = add .
+	awn = add -u
+	sl = stash list
+	sa = stash apply
+	sv = stash save
+	revert = checkout --theirs
+	fe = fetch -p
+	lb = for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname
+	up = "!git remote update -p; git merge --ff-only @{u}"
+	pruner = !git prune --expire=now; git reflog expire --expire-unreachable=now --rewrite --all
+	repacker = repacker = !git repack -a -d -f --depth=300 --window=300 --window-memory=1g
+[credential]
+	helper = cache --timeout 86400
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
