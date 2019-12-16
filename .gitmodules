@@ -1,9 +1,9 @@
 [submodule "bundle/dracula"]
 	path = bundle/dracula
 	url = https://github.com/dracula/vim.git
-[submodule "zsh/powerlevel9k"]
-	path = zsh/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "zsh/powerlevel10k"]
+	path = zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
