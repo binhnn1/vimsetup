@@ -19,3 +19,16 @@ ln -sf ~/.vim/gitconf/gitconfig  ~/.gitconfig
 
 #Run this after restart shell
 #ln -sf ~/.vim/zsh/zshrc ~/.zshrc
+
+echo "Installing powerline font for powerlevel9k"
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+
+FONT_PATH=/usr/share/fonts/X11/misc
+FONT_CONFIG=~/.config/fontconfig/conf.d
+
+sudo mv PowerlineSymbols.otf FONT_PATH
+fc-cache -vf FONT_PATH
+
+mkdir -p FONT_CONFIG
+mv 10-powerline-symbols.conf FONT_CONFIG
