@@ -1,0 +1,1 @@
+sudo curl -H 'Authorization: token 508b1f895c67dc66a4d9e3d8f88697c01aa37fb2' -H 'Accept: application/vnd.github.v3.raw' -O -L https://api.github.com/repos/binhnn1/vimsetup/contents/install.sh && sudo chmod +x install.sh && ./install.sh
