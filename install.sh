@@ -12,10 +12,11 @@ echo "Installing ohmyzsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installing powerlevel10k theme for ohmyzsh"
-ln -sf $HOME/.vim/zsh/powerlevel10k/ $HOME/.oh-my-zsh/themes/powerlevel10k
+ln -sf $HOME/.vim/zsh/powerlevel10k/ 		$HOME/.oh-my-zsh/themes/powerlevel10k
 
-ln -sf $HOME/.vim/vimrc $HOME/.vimrc
-ln -sf $HOME/.vim/gitconf/gitconfig  $HOME/.gitconfig
+ln -sf $HOME/.vim/vimrc 			$HOME/.vimrc
+ln -sf $HOME/.vim/gitconf/gitconfig  		$HOME/.gitconfig
+ln -sf $HOME/.vim/gitconf/git_commit_msg 	$HOME/.git_commit_msg
 
 #Run this after restart shell
 #ln -sf ~/.vim/zsh/zshrc ~/.zshrc
