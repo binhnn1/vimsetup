@@ -30,3 +30,8 @@ fc-cache -vf /usr/share/fonts/X11/misc
 
 mkdir -p $HOME/.config/fontconfig/conf.d
 mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d
+
+
+echo "Installing fzf"
+cd plugin/fzf
+./install.sh
