@@ -21,17 +21,14 @@ ln -sf $HOME/.vim/gitconf/git_commit_msg 	$HOME/.git_commit_msg
 #Run this after restart shell
 #ln -sf ~/.vim/zsh/zshrc ~/.zshrc
 
-echo "Installing powerline font for powerlevel10k"
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-
-sudo mv PowerlineSymbols.otf /usr/share/fonts/X11/misc/
-fc-cache -vf /usr/share/fonts/X11/misc
-
-mkdir -p $HOME/.config/fontconfig/conf.d
-mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d
-
+echo "Installing Meslo Nerd Font patched for powerlevel10k"
+sudo mkdir -p /usr/share/fonts/truetype/
+sudo cp $HOME/.vim/zsh/MesloFont/*.ttf /usr/share/fonts/truetype/
+sudo fc-cache -f
+#Use Meslo font by Open Terminal → Preferences and click on the selected profile under Profiles. Check Custom font under Text Appearance and select MesloLGS NF Regular
 
 echo "Installing fzf"
 cd plugin/fzf
 ./install.sh
+
+#Run p10k configure after installation
