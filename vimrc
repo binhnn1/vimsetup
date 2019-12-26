@@ -21,6 +21,8 @@ set number              	" show line numbers
 set cursorline          	" highlight current line
 set incsearch           	" search as characters are entered
 set hlsearch            	" highlight matches
+set ignorecase			" search with ignore case
+set smartcase			" search with smart case
 set showmatch           	" highlight matching parentheses / brackets [{()}]
 set encoding=utf-8      	" set encoding to UTF-8 (default was "latin1")
 
