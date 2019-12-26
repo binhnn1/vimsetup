@@ -27,6 +27,16 @@ set showmatch           	" highlight matching parentheses / brackets [{()}]
 set encoding=utf-8      	" set encoding to UTF-8 (default was "latin1")
 
 
+"Syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " edit vimrc/zshrc and load vimrc bindings
 nnoremap <leader>ev :vsp ~/.vimrc<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>

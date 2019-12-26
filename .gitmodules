@@ -10,3 +10,6 @@
 [submodule "plugin/fzf"]
 	path = plugin/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
