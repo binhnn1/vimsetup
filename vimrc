@@ -27,6 +27,11 @@ set showmatch           	" highlight matching parentheses / brackets [{()}]
 set encoding=utf-8      	" set encoding to UTF-8 (default was "latin1")
 
 
+set shiftwidth=3		" set indent = 3 spaces
+set tabstop=3			" set tabstop = 3
+set autoindent
+set smartindent
+
 "Syntastic configuration
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
