@@ -1,18 +1,24 @@
 [submodule "bundle/dracula"]
 	path = bundle/dracula
 	url = https://github.com/dracula/vim.git
+	branch = master
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+	branch = master
 [submodule "zsh/powerlevel10k"]
 	path = zsh/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+	branch = master
 [submodule "plugin/fzf"]
 	path = plugin/fzf
 	url = https://github.com/junegunn/fzf.git
+	branch = master
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+	branch = master
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+	branch = master
