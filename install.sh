@@ -13,7 +13,8 @@ echo "Installing ohmyzsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installing powerlevel10k theme for ohmyzsh"
-sudo ln -sf $VIM_PATH/zsh/powerlevel10k/ 		$HOME/.oh-my-zsh/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+sudo ln -sf $VIM_PATH/zsh/powerlevel10k/ 		$HOME/.oh-my-zsh/custom/themes/powerlevel10k
 
 sudo ln -sf $VIM_PATH/vimrc 							$HOME/.vimrc
 sudo ln -sf $VIM_PATH/gitconf/gitconfig  		$HOME/.gitconfig
@@ -34,6 +35,6 @@ echo "Installing fzf"
 $VIM_PATH/bundle/fzf/install
 
 echo "Installing YouCompleteMe"
-python3 $VIM_PATH/bundle/YouCompleteMe/install.py --clang-completer
+python3 $VIM_PATH/bundle/YouCompleteMe/install.py --clang-completer --clangd-completer
 
 #Run p10k configure after installation
