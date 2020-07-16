@@ -13,6 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Other Plugins
 Plugin 'preservim/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'frazrepo/vim-rainbow'
 Plugin 'preservim/nerdcommenter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'junegunn/fzf'
@@ -82,5 +84,19 @@ let g:syntastic_cpp_compiler = "g++"
 let g:syntastic_cpp_compiler_options = "-std=c++11"
 
 syntax enable
-"colorscheme dracula
-colorscheme seoul256
+colorscheme dracula
+"colorscheme seoul256
+
+"vim-rainbow configuration
+let g:rainbow_active = 1
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+"ctags configuration
+nnoremap <leader>. :CtrlPTag<cr>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }

@@ -41,6 +41,9 @@ $VIM_PATH/bundle/fzf/install
 echo "Installing YouCompleteMe"
 python3 $VIM_PATH/bundle/YouCompleteMe/install.py --clang-completer --clangd-completer
 
+echo "Installing ctags"
+sudo apt install -y ctags
+
 
 echo
 echo
@@ -50,7 +53,7 @@ echo "1. sudo ln -sf ~/.vim/zsh/zshrc ~/.zshrc"
 echo "2. Restart shell"
 echo "3. sudo vim. :PluginInstall"
 echo "4. p10k configure"
-echo "5. "
+echo "5. run ctags -R in project dir"
 echo **************************************
 echo
 echo
