@@ -1,5 +1,7 @@
-echo "Installing vim setup"
+echo "Installing vim"
+sudo apt install -y vim
 
+echo "Installing vim setup"
 VIM_PATH=$HOME/.vim
 git clone https://github.com/binhnn1/vimsetup.git $VIM_PATH
 
@@ -8,16 +10,17 @@ git clone https://github.com/VundleVim/Vundle.vim.git $VIM_PATH/bundle/Vundle.vi
 
 echo "Installing zsh"
 sudo apt install -y zsh
+sudo chsh -s $(which zsh)
 
 echo "Installing ohmyzsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installing powerlevel10k theme for ohmyzsh"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $VIM_PATH/zsh/powerlevel10k
 sudo ln -sf $VIM_PATH/zsh/powerlevel10k/ 		$HOME/.oh-my-zsh/custom/themes/powerlevel10k
 
 sudo ln -sf $VIM_PATH/vimrc 							$HOME/.vimrc
-sudo ln -sf $VIM_PATH/gitconf/gitconfig  		$HOME/.gitconfig
+sudo ln -sf $VIM_PATH/gitconf/gitconfig  			$HOME/.gitconfig
 sudo ln -sf $VIM_PATH/gitconf/git_commit_msg 	$HOME/.git_commit_msg
 
 
@@ -50,7 +53,7 @@ echo
 echo **************************************
 echo "Finished Installing. Run the Following:"
 echo "1. sudo ln -sf ~/.vim/zsh/zshrc ~/.zshrc"
-echo "2. Restart shell"
+echo "2. Log out / Log in"
 echo "3. sudo vim. :PluginInstall"
 echo "4. p10k configure"
 echo "5. run ctags -R in project dir"
