@@ -13,14 +13,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Other Plugins
 Plugin 'preservim/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'frazrepo/vim-rainbow'
+"Plugin 'kien/ctrlp.vim'
+Plugin 'luochen1990/rainbow'
 Plugin 'preservim/nerdcommenter'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'junegunn/fzf'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'dracula/vim',{'name':'dracula'}
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,9 +52,13 @@ set ignorecase                  " search with ignore case
 set smartcase                   " search with smart case
 set showmatch                   " highlight matching parentheses / brackets [{()}]
 set encoding=utf-8              " set encoding to UTF-8 (default was "latin1")
+set foldmethod=indent
 
-set shiftwidth=3                " set indent = 3 spaces
-set tabstop=3                   " set tabstop = 3
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+"set shiftwidth=3                " set indent = 3 spaces
+"set tabstop=3                   " set tabstop = 3
 set autoindent
 set smartindent
 
@@ -72,20 +77,21 @@ map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 
 "Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"Turn this on ONLY when syntastic is active
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1 
-let g:syntastic_auto_loc_list = 1 
-let g:syntastic_check_on_open = 1 
-let g:syntastic_check_on_wq = 0 
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_compiler_options = "-std=c++11"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_cpp_compiler = "g++"
+"let g:syntastic_cpp_compiler_options = "-std=c++11"
 
 syntax enable
-colorscheme dracula
-"colorscheme seoul256
+"colorscheme dracula
+colorscheme seoul256
 
 "vim-rainbow configuration
 let g:rainbow_active = 1
@@ -93,10 +99,17 @@ let g:rainbow_active = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 "ctags configuration
-nnoremap <leader>. :CtrlPTag<cr>
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+"nnoremap <leader>. :CtrlPTag<cr>
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  "\ 'file': '\v\.(exe|so|dll)$',
+  "\ 'link': 'some_bad_symbolic_links',
+  "\ }
+
+"copty to clipboard
+"by using ,y or ,Y
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p

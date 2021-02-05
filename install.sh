@@ -1,5 +1,15 @@
+echo "Installing gcc-8, g++-8"
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install -y gcc-8 g++-8
+sudo apt install -y build-essential cmake vim-nox python3-dev
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+
 echo "Installing vim"
 sudo apt install -y vim
+sudo apt install -y vim-gnome
 
 echo "Installing vim setup"
 VIM_PATH=$HOME/.vim
@@ -37,15 +47,15 @@ sudo cp $VIM_PATH/zsh/MesloFont/*.ttf $FONT_PATH
 sudo fc-cache -f
 #Use Meslo font by Open Terminal → Preferences and click on the selected profile under Profiles. Check Custom font under Text Appearance and select MesloLGS NF Regular
 
-sudo apt install -y build-essential python3-dev
+
 echo "Installing fzf"
 $VIM_PATH/bundle/fzf/install
 
 echo "Installing YouCompleteMe"
 python3 $VIM_PATH/bundle/YouCompleteMe/install.py --clang-completer --clangd-completer
 
-echo "Installing ctags"
-sudo apt install -y ctags
+#echo "Installing ctags"
+#sudo apt install -y ctags
 
 
 echo
