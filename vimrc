@@ -52,7 +52,6 @@ set ignorecase                  " search with ignore case
 set smartcase                   " search with smart case
 set showmatch                   " highlight matching parentheses / brackets [{()}]
 set encoding=utf-8              " set encoding to UTF-8 (default was "latin1")
-set foldmethod=indent
 
 set expandtab
 set shiftwidth=4

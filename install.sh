@@ -1,3 +1,4 @@
+#!/bin/sh
 echo "Installing gcc-8, g++-8"
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt update
@@ -27,11 +28,14 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 echo "Installing powerlevel10k theme for ohmyzsh"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $VIM_PATH/zsh/powerlevel10k
-sudo ln -sf $VIM_PATH/zsh/powerlevel10k/ 		$HOME/.oh-my-zsh/custom/themes/powerlevel10k
+sudo ln -sf $VIM_PATH/zsh/powerlevel10k/ $HOME/.oh-my-zsh/custom/themes/powerlevel10k
 
-sudo ln -sf $VIM_PATH/vimrc 							$HOME/.vimrc
-sudo ln -sf $VIM_PATH/gitconf/gitconfig  			$HOME/.gitconfig
-sudo ln -sf $VIM_PATH/gitconf/git_commit_msg 	$HOME/.git_commit_msg
+echo "Customizing aliases for zsh"
+sudo ln -sf $VIM_PATH/custom/aliases.zsh $ZSH_CUSTOM/aliases.zsh
+
+sudo ln -sf $VIM_PATH/vimrc $HOME/.vimrc
+sudo ln -sf $VIM_PATH/gitconf/gitconfig $HOME/.gitconfig
+sudo ln -sf $VIM_PATH/gitconf/git_commit_msg $HOME/.git_commit_msg
 
 
 echo "Installing dracula theme for terminal"
