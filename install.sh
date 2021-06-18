@@ -58,6 +58,9 @@ $VIM_PATH/bundle/fzf/install
 echo "Installing YouCompleteMe"
 python3 $VIM_PATH/bundle/YouCompleteMe/install.py --clang-completer --clangd-completer
 
+echo "Install xclip"
+sudo apt install -y xclip
+
 #echo "Installing ctags"
 #sudo apt install -y ctags
 

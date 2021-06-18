@@ -30,7 +30,7 @@ alias .....='cd ../../../..'
 alias update_software='sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean'
 
 # Shortcut
-#Remove a directory and all files
+# Remove a directory and all files
 alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
@@ -61,3 +61,6 @@ alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
+# Alias for xclip
+alias "c=xclip -selection clipboard"
+alias v='xclip -o -selection clipboard'

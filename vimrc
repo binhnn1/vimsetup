@@ -98,13 +98,14 @@ let g:rainbow_active = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 "ctags configuration
-"nnoremap <leader>. :CtrlPTag<cr>
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-  "\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  "\ 'file': '\v\.(exe|so|dll)$',
-  "\ 'link': 'some_bad_symbolic_links',
-  "\ }
+set tags+=/grmn/prj/rse22/pri/ctags
+nnoremap <leader>. :CtrlPTag<cr>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 "copty to clipboard
 "by using ,y or ,Y
@@ -112,3 +113,8 @@ noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
+
+"Folding Setting
+"zo/zc: open/close a fold at cursor
+set foldmethod=syntax
+set nofoldenable
