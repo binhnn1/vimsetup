@@ -1,0 +1,23 @@
+- Find all files containing specific text
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+find ./ -type f -name "*.cpp" | xargs grep -nie "pattern"
+
+- Send Intent
+adb shell am broadcast -a android.intent.action.SEND --es "EXTRA_TASK_ID" "4" --es "EXTRA_COMPONENT_NAME" "someComponent" -t "text/plain"
+
+- Get default launcher package
+adb shell cmd shortcut get-default-launcher
+Launcher: ComponentInfo{com.bmwgroup.padi/com.bmwgroup.padi.launcher.MainActivity}
+
+- Set default launcher
+adb shell cmd package set-home-activity com.bmwgroup.padi/com.bmwgroup.padi.launcher.MainActivity
+
+- List all installed packages
+adb shell pm list packages -f
+
+- Get version of an installed package
+dumpsys package packages | grep -i packgageName
+dumpsys package com.google.android.exoplayer2.demo | grep versionName
+
+- Check if an application is running:
+adb shell ps | grep drminfo
