@@ -119,8 +119,3 @@ prompt_context() {}
 
 #Custom scripts
 VIM_PATH=$HOME/.vim
-source $VIM_PATH/custom/android.custom
-source $VIM_PATH/custom/shell.custom
-
-source ~/.bash_profile
-source ~/.bash_aliases

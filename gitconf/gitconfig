@@ -2,7 +2,7 @@
 	name = Binh Nguyen
 	email = binhnn1@uci.edu
 [core]
-	editor = vim
+	editor = nvim
 [commit]
 	template = ~/.git_commit_msg
 [color "diff"]

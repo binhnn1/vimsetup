@@ -12,7 +12,9 @@ alias mkdir='mkdir -p'
 alias less='less -R'
 
 # Editors
-alias vi='vim'
+alias nv='nvim'
+alias vi='nv'
+alias vim='vi'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias st='subl'
@@ -26,16 +28,17 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+alias cdsandbox='cd ~/sandbox'
 
 alias update_software='sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean'
 
 # Shortcut
 # Remove a directory and all files
-alias rmd='/bin/rm  --recursive --force --verbose '
+#alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
-alias ls='ls -aFh --color=always' # add colors and file type extensions
+alias ls='ls -aFhG' # add colors and file type extensions
 alias lx='ls -lXBh' # sort by extension
 alias lk='ls -lSrh' # sort by size
 alias lc='ls -lcrh' # sort by change time
